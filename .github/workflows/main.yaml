@@ -12,4 +12,4 @@ jobs:
     steps:
       - name: deploy sonar
         run: |
-          helm upgrade sonarqube ./Deployment/charts/sonarqube/ --install --wait --atomic --namespace= kube-system --set=app.name= sonarqube --values=./Deployment/charts/sonarqube/values.yaml
+          helm upgrade --install -f ./Deployment/charts/sonarqube/values.yaml -n kube-system sonarqube ./Deployment/charts/sonarqube/
