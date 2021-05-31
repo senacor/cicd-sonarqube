@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: prepare EKS
       - uses: chrislennon/action-aws-cli@v1.1
-      - run: |
-          aws eks update-kubeconfig --name senacor-cicd-deployment --region eu-west-2 --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD --profile 604370441254_StateOfTheArtCICD
+        with:
+          exec: aws eks update-kubeconfig --name senacor-cicd-deployment --region eu-west-2 --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD --profile 604370441254_StateOfTheArtCICD
       - name: deploy sonar
         run: |
           helm upgrade --install -f ./Deployment/charts/sonarqube/values.yaml -n kube-system sonarqube ./Deployment/charts/sonarqube/
