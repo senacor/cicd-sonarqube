@@ -57,7 +57,7 @@ service:
       targetPort: 9000
   externalPort: 9000
   internalPort: 9000
-  labels: sonarqube
+  labels:
   annotations: {}
   # May be used in example for internal load balancing in GCP:
   # cloud.google.com/load-balancer-type: Internal
