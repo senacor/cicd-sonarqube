@@ -28,7 +28,7 @@ jobs:
       - name: deploy sonar
         run: |
           helm dependency update Deployment/charts/sonarqube/
-          helm upgrade --install -f Deployment/charts/sonarqube/values.yaml -n kube-system sonarqube Deployment/charts/sonarqube/
+          helm upgrade --install -f Deployment/charts/sonarqube/values.yaml -n sonarqube sonarqube Deployment/charts/sonarqube/
           LOAD_BALANCER_URL=$(
                        kubectl get service \
                          --output json \

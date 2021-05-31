@@ -50,10 +50,14 @@ nginx:
   enabled: false
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
+  ports:
+    - name: http-app
+      port: 9000
+      targetPort: 9000
   externalPort: 9000
   internalPort: 9000
-  labels:
+  labels: sonarqube
   annotations: {}
   # May be used in example for internal load balancing in GCP:
   # cloud.google.com/load-balancer-type: Internal
