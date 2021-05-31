@@ -37,3 +37,4 @@ jobs:
                          | jq -r '.status.loadBalancer.ingress[].hostname'
                        )
           echo "Load balancer URL is: http://${LOAD_BALANCER_URL}"
+          kubectl get pod -A
