@@ -11,6 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: deploy sonar
-        uses: WyriHaximus/github-action-helm3@v2
         run: |
           helm upgrade sonarqube ./Deployment/charts/sonarqube/ --install --wait --atomic --namespace= kube-system --set=app.name= sonarqube --values=./Deployment/charts/sonarqube/values.yaml
