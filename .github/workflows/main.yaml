@@ -1,0 +1,17 @@
+name: ci
+
+on: push
+
+env:
+  APP_NAME: sonarqube
+  APP_NAMESPACE: kube-system
+  REPO: simple-provider
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy sonar
+        uses: WyriHaximus/github-action-helm3@v2
+        run: |
+          helm upgrade APP_NAME ./Deployment/charts/sonarqube/ --install --wait --atomic --namespace=APP_NAMESPACE --set=app.name=APP_NAME --values=./Deployment/charts/sonarqube/values.yaml
