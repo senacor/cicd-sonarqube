@@ -25,4 +25,4 @@ jobs:
           --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD
       - name: deploy sonar
         run: |
-          ls ../
+          ls ../cicd-sonarqube/
