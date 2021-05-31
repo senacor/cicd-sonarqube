@@ -27,4 +27,4 @@ jobs:
       - name: deploy sonar
 
         run: |
-          find Deployment
+          find deployment
