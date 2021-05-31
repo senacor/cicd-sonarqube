@@ -28,4 +28,4 @@ jobs:
       - name: deploy sonar
 
         run: |
-          find Deployment
+          helm upgrade --install -f Deployment/charts/sonarqube/values.yaml -n kube-system sonarqube Deployment/charts/sonarqube/s
