@@ -25,4 +25,4 @@ jobs:
           --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD
       - name: deploy sonar
         run: |
-          helm upgrade --install -f ./Deployment/charts/sonarqube/values.yaml -n kube-system sonarqube ./Deployment/charts/sonarqube/
+          - ls -la
