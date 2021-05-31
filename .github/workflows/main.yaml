@@ -24,6 +24,6 @@ jobs:
           --region eu-west-2 \
           --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD
       - name: deploy sonar
-        working-directory: dart_project
+        working-directory: cicd-sonarqube
         run: |
           ls ./
