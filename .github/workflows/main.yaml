@@ -3,6 +3,8 @@ name: ci
 on: push
 
 env:
+  APP_NAME: sonarqube
+  APP_NAMESPACE: kube-system
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
   AWS_DEFAULT_REGION: eu-west-2
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -22,6 +24,6 @@ jobs:
           --region eu-west-2 \
           --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD
       - name: deploy sonar
-        working-directory: cicd-sonarqube
+
         run: |
-          ls ../
+          find Deployment
