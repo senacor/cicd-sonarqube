@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: prepare EKS
-      - uses: chrislennon/action-aws-cli@v1.1
+        uses: chrislennon/action-aws-cli@v1.1
         with:
           exec: aws eks update-kubeconfig --name senacor-cicd-deployment --region eu-west-2 --role-arn arn:aws:iam::604370441254:role/StateOfTheArtCICD --profile 604370441254_StateOfTheArtCICD
       - name: deploy sonar
